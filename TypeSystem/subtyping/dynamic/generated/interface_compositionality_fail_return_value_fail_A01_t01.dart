@@ -2,13 +2,20 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-/// @assertion We say that a type T0 is a subtype of a type T1 (written T0 <: T1)
-/// when:
-/// Interface Compositionality: T0 is an interface type
-/// C0<S0, ..., Sk> and T1 is C0<U0, ..., Uk> and each Si <: Ui
-/// @description Check that if type T0 is an interface type
-/// C0<S0, ..., Sk> and T1 is C0<U0, ..., Uk> and not all of Si <: Ui then T0 is
-/// not a subtype of T1
+/// @assertion We say that a type T0 is a subtype of a type T1
+/// (written T0 <: T1) when:
+/// ...
+/// Interface Compositionality: `T0` is an interface type `C0<S0, ..., Sk>` and
+/// `T1` is `C0<U0, ..., Uk>`. For `i` in `0..k`, let `vi` be the declared
+/// variance of the `i`th type parameter of `C0`. Then, for each `i` in `0..k`,
+/// one of the following holds:
+///  - `Si <: Ui` and `vi` is absent or `out`.
+///  - `Ui <: Si` and `vi` is `in`.
+///  - `Si <: Ui` and `Ui <: Si`, and `vi` is `inout`.
+///
+/// @description Check that if type `T0` is an interface type `C0<S0, ..., Sk>`
+/// and `T1` is `C0<U0, ..., Uk>` and there is `Sj` which is not a subtype of
+/// `Uj` then `T0` is not a subtype of `T1`
 /// @author sgrekhov@unipro.ru
 ///
 /// @description Check that if type T0 not a subtype of a type T1, then instance
