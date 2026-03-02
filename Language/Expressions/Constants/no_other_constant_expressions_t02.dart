@@ -16,8 +16,9 @@ class C {
   const C();
 //^^^^^
 // [analyzer] unspecified
-// [cfe] unspecified
   final v = () {};
+//^^^^^
+// [cfe] unspecified
 }
 
 enum E {
