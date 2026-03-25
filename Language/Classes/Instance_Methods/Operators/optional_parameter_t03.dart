@@ -10,13 +10,12 @@
 /// @author iefremov
 
 class C {
-  operator []=([var v]) {}
-//         ^
+  operator []=([Object? v]) {}
+//         ^^^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
 
 main() {
-  C c = new C();
-  c[0] = new C();
+  print(C);
 }

@@ -12,7 +12,7 @@
 /// @author sgrekhov@unipro.ru
 
 class A {
-  f({var x}) {}
+  f({int? x}) {}
 }
 
 typedef AAlias = A;
@@ -25,6 +25,5 @@ class C extends AAlias {
 }
 
 main() {
-  new A().f(x: 1);
-  new C().f();
+  print(C);
 }

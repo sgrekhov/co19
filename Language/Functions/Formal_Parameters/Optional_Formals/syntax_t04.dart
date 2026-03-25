@@ -14,9 +14,8 @@
 /// parameter declaration must be followed by an expression.
 /// @author iefremov
 
-
-f([var x = ]) {}
-//         ^
+f([int? x = ]) {}
+//          ^
 // [analyzer] unspecified
 // [cfe] unspecified
 

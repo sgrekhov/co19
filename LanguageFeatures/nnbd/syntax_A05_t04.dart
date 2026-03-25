@@ -22,8 +22,8 @@ class C {
 //                                                 ^^^^^^^^
 // [analyzer] unspecified
 // [cfe] unspecified
-  static String staticTest3(int x, {String z = "", final required String y}) => y;
-//                                                       ^^^^^^^^
+  static String staticTest3(int x, {String z = "", String required y}) => y;
+//                                                        ^^^^^^^^
 // [analyzer] unspecified
 // [cfe] unspecified
 
@@ -39,8 +39,8 @@ class C {
 //                                         ^^^^^^^^
 // [analyzer] unspecified
 // [cfe] unspecified
-  String test4(int x, {String z = "", final required String y}) => y;
-//                                          ^^^^^^^^
+  String test4(int x, {String z = "", String required y}) => y;
+//                                           ^^^^^^^^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
@@ -53,8 +53,8 @@ String test2(int x, [String z = "", required String y]) => y;
 //                                  ^^^^^^^^
 // [analyzer] unspecified
 // [cfe] unspecified
-String test3(int x, {String z = "", final required String y}) => y;
-//                                        ^^^^^^^^
+String test3(int x, {String z = "", String required  y}) => y;
+//                                         ^^^^^^^^
 // [analyzer] unspecified
 // [cfe] unspecified
 

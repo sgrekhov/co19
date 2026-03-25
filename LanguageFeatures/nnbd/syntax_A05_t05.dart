@@ -23,8 +23,8 @@ typedef String Foo2(int x, [String z, required String y]);
 // [analyzer] unspecified
 // [cfe] unspecified
 
-typedef String Foo3(int x, {String z, final required A y});
-//                                    ^^^^^
+typedef String Foo3(int x, {String z, A required y});
+//                                      ^^^^^^^^
 // [analyzer] unspecified
 // [cfe] unspecified
 

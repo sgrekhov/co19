@@ -15,8 +15,8 @@ void f1({int _ = 0}) {}
 // [cfe] unspecified
 
 main() {
-  void f2({var _x}) {}
-//             ^^
+  void f2({_x}) {}
+//         ^^
 // [analyzer] unspecified
 // [cfe] unspecified
 

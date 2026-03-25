@@ -10,7 +10,7 @@
 /// @author kaigorodov
 
 class C {
-  get getter([var value = null]) { throw new C(); }
+  get getter([int? value = null]) { throw new C(); }
 //          ^
 // [analyzer] unspecified
 // [cfe] unspecified

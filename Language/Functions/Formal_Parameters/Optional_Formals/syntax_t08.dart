@@ -10,16 +10,15 @@
 /// defaultNamedParameter:
 ///   normalFormalParameter (':' expression)?
 /// ;
-/// @description Checks that the ':' character in an optional named parameter
-/// declaration must be followed by an expression.
+/// @description Checks that the `:` character in an optional named parameter
+/// declaration is a syntax error.
 /// @author rodionov
 
-
-f({var x: }) {}
-//        ^
+f({int x: 0}) {}
+//      ^
 // [analyzer] unspecified
 // [cfe] unspecified
 
 main() {
-  f();
+  print(f);
 }

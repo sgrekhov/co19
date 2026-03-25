@@ -14,9 +14,8 @@
 /// in an optional positional parameter declaration.
 /// @author iefremov
 
-
-f([var x = var z]) {}
-//         ^
+f([int? x = int z]) {}
+//          ^
 // [analyzer] unspecified
 // [cfe] unspecified
 

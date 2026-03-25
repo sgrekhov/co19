@@ -14,12 +14,11 @@
 /// in an optional named parameter declaration.
 /// @author rodionov
 
-
-f({var x: var z}) {}
-//        ^
+f({int x = int z = 0}) {}
+//         ^
 // [analyzer] unspecified
 // [cfe] unspecified
 
 main() {
-  f();
+  print(f);
 }
