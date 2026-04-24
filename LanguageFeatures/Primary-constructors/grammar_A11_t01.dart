@@ -30,15 +30,15 @@ extension type const ET(int _) {
 }
 
 main() {
-  final c = C();
-//          ^
+  print(C());
+//      ^
 // [analyzer] STATIC_WARNING.NON_CONST_CALL_TO_LITERAL_CONSTRUCTOR
 
-  final m = M();
-//          ^
+  print(M());
+//      ^
 // [analyzer] STATIC_WARNING.NON_CONST_CALL_TO_LITERAL_CONSTRUCTOR
 
-  final et = ET(0);
-//           ^^
+  print(ET(0));
+//      ^^
 // [analyzer] STATIC_WARNING.NON_CONST_CALL_TO_LITERAL_CONSTRUCTOR
 }

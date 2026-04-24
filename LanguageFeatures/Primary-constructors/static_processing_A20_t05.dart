@@ -23,8 +23,6 @@
 
 // SharedOptions=--enable-experiment=primary-constructors
 
-import '../../Utils/expect.dart';
-
 class C1._([int? v]);
 //               ^
 // [analyzer] STATIC_WARNING.UNUSED_ELEMENT_PARAMETER
