@@ -2,7 +2,9 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-/// @assertion TODO(sgrekhov): Add an assertion after updating the specification
+/// @assertion <primaryConstructor> ::= // New rule.
+///      'const'? <typeWithParameters> ('.' <identifierOrNew>)?
+///      <declaringParameterList>;
 ///
 /// @description Check that it is allowed to omit `const` keyword when declaring
 /// a generative constructor of an enum.

@@ -1,0 +1,11 @@
+name: co19_ffi
+description: co19 tests for Dart FFI library
+
+# These tests aren't intended for publishing on pub.dev.
+publish_to: none
+
+environment:
+  sdk: '>=3.3.0-279.1.beta <4.0.0'
+
+dependencies:
+  meta: ^1.18.2
