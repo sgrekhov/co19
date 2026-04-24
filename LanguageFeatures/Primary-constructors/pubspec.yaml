@@ -1,11 +1,11 @@
-name: co19_ffi
-description: co19 tests for Dart FFI library
+name: co19_primary_constructors
+description: co19 tests for Primary constructors feature
 
 # These tests aren't intended for publishing on pub.dev.
 publish_to: none
 
 environment:
-  sdk: '>=3.11.0 <4.0.0'
+  sdk: '>=3.12.0 <4.0.0'
 
 dependencies:
   meta: ^1.18.2
