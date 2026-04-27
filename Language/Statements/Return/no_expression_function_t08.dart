@@ -7,8 +7,9 @@
 /// enclosing function, and let `T` be the declared return type of `f`.
 /// ...
 /// Case ⟨Asynchronous non-generator functions⟩. Consider the case where `f` is
-/// an asynchronous non-generator function. It is a compile-time error if `s` is
-/// `return;`, unless `flatten(T)` is `void`, `dynamic`, or `Null`.
+/// an asynchronous non-generator function with future value type `Tv`. It is a
+/// compile-time error if `s` is `return;`, unless `Tv` is `void`, `dynamic`, or
+/// `Null`.
 ///
 /// @description Checks that it is a compile-time error if a statement of the
 /// form `return;` is used in an asynchronous getter whose declared return type
