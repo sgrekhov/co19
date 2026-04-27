@@ -31,9 +31,9 @@ class C {
     }
   }
 
-  Future<Never> bar() async {
+  Future<ET?> bar() async {
     if (2 > 1) {
-      return throw 42;
+      return ET(0);
     } else {
       return;
 //    ^^^^^^
@@ -42,6 +42,8 @@ class C {
     }
   }
 }
+
+extension type ET(int _) {}
 
 main() {
   print(C);

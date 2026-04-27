@@ -13,7 +13,8 @@
 ///
 /// @description Checks that it is a compile-time error if a statement of the
 /// form `return;` is used in an asynchronous static method whose declared
-/// return type is `Future<Object?>` or `Future<Never>`.
+/// return type is `Future<Object?>` or `Future<ET?>`, where ET is an extension
+/// type.
 /// @author a.semenov@unipro.ru
 
 import 'dart:async';
@@ -26,13 +27,15 @@ class C {
 // [cfe] unspecified
   }
 
-  static Future<Never> bar() async {
+  static Future<ET?> bar() async {
     return;
 //  ^^^^^^
 // [analyzer] unspecified
 // [cfe] unspecified
   }
 }
+
+extension type ET(int _) {}
 
 main() {
   print(C);

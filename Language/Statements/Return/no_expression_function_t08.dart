@@ -13,26 +13,28 @@
 ///
 /// @description Checks that it is a compile-time error if a statement of the
 /// form `return;` is used in an asynchronous getter whose declared return type
-/// is `Future<Object?>` or `Future<Never>`.
+/// is `Future<Object?>` or `Future<ET?>`, where ET is an extension type.
 /// @author a.semenov@unipro.ru
 
 import 'dart:async';
 
 class C {
-  Future<Object?> get foo async {
+  static Future<Object?> get foo async {
     return;
 //  ^^^^^^
 // [analyzer] unspecified
 // [cfe] unspecified
   }
 
-  Future<Never> get bar async {
+  Future<ET?> get bar async {
     return;
 //  ^^^^^^
 // [analyzer] unspecified
 // [cfe] unspecified
   }
 }
+
+extension type ET(int _) {}
 
 main() {
   print(C);
