@@ -2,19 +2,19 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-/// @assertion It is a compile time error to assign a value to a local variable
-/// marked late and final when the variable is definitely assigned. This includes
-/// all forms of assignments, including assignments via the composite assignment
-/// operators as well as pre and post-fix operators.
+/// @assertion It is a compile time error to assign a value to a `final`, `late`
+/// local variable if it is definitely assigned. Thus, it is not a compile time
+/// error to assign to a potentially unassigned `final`, `late` local variable.
 ///
 /// @description Check that it is a compile time error to assign a value to a
-/// local variable marked late and final when the variable is definitely assigned
+/// local variable marked `late` and `final` when the variable is definitely
+/// assigned.
 /// @author sgrekhov@unipro.ru
 
 main() {
   late final int x = 42;
   x >>>= 1;
-//  ^^^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }

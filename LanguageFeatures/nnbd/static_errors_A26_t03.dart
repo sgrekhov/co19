@@ -2,26 +2,21 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-/// @assertion It is a compile time error to read a local variable marked late
-/// when the variable is definitely unassigned. This includes all forms of reads,
-/// including implicit reads via the composite assignment operators as well as
-/// pre and post-fix operators.
+/// @assertion It is a compile time error to read a local variable when the
+/// variable is definitely unassigned unless the variable is non-`final`, and
+/// non-`late`, and has nullable type.
 ///
 /// @description Check that is a compile time error to read a local variable
-/// marked late when the variable is definitely unassigned. This includes all
-/// forms of reads, including implicit reads via the composite assignment
-/// operators as well as pre and post-fix operators
+/// marked `late` when the variable is definitely unassigned. Test implicit read
+/// via the null-aware assignment.
 /// @author sgrekhov@unipro.ru
 /// @issue 39876
 /// @issue 40943
 
 main() {
   late num x;
-  x ??=
+  x ??= 1; // ignore: dead_null_aware_expression, dead_code
 //^
 // [analyzer] unspecified
 // [cfe] unspecified
-        1;
-//      ^
-// [analyzer] STATIC_WARNING.DEAD_NULL_AWARE_EXPRESSION
 }
