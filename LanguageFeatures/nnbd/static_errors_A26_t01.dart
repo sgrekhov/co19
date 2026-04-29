@@ -2,15 +2,13 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-/// @assertion It is a compile time error to read a local variable marked late
-/// when the variable is definitely unassigned. This includes all forms of reads,
-/// including implicit reads via the composite assignment operators as well as
-/// pre and post-fix operators.
+/// @assertion It is a compile time error to read a local variable when the
+/// variable is definitely unassigned unless the variable is non-`final`, and
+/// non-`late`, and has nullable type.
 ///
 /// @description Check that is a compile time error to read a local variable
-/// marked late when the variable is definitely unassigned. This includes all
-/// forms of reads, including implicit reads via the composite assignment
-/// operators as well as pre and post-fix operators
+/// marked `late` when the variable is definitely unassigned. Test implicit
+/// reads via the composite assignment.
 /// @author sgrekhov@unipro.ru
 /// @issue 39876
 
@@ -25,7 +23,7 @@ test1() {
 test2() {
   late int x;
   x += 1;
-//  ^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
@@ -33,7 +31,7 @@ test2() {
 test3() {
   late int x;
   x -= 1;
-//  ^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
@@ -41,7 +39,7 @@ test3() {
 test4() {
   late int x;
   x *= 1;
-//  ^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
@@ -49,7 +47,7 @@ test4() {
 test5() {
   late int x;
   x %= 1;
-//  ^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
@@ -57,7 +55,7 @@ test5() {
 test6() {
   late int x;
   x ~/= 1;
-//  ^^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
@@ -65,7 +63,7 @@ test6() {
 test7() {
   late int x;
   x <<= 1;
-//  ^^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
@@ -73,7 +71,7 @@ test7() {
 test8() {
   late int x;
   x >>= 1;
-//  ^^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
@@ -81,7 +79,7 @@ test8() {
 test9() {
   late int x;
   x &= 1;
-//  ^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
@@ -89,7 +87,7 @@ test9() {
 test10() {
   late int x;
   x ^= 1;
-//  ^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
@@ -97,7 +95,7 @@ test10() {
 test11() {
   late int x;
   x |= 1;
-//  ^^
+//^
 // [analyzer] unspecified
 // [cfe] unspecified
 }
