@@ -15,21 +15,21 @@
 import '../../Utils/expect.dart';
 
 class C1(var int v) {
-  augment C1;
+  augment C1(int v);
 }
 
 class C2.someName(final int v) {
   this;
-  augment C2.someName;
+  augment C2.someName(int v);
 }
 
 enum E(final int v) {
   e0(0);
-  augment E;
+  augment E(int v);
 }
 
 extension type ET(int v) {
-  augment ET;
+  augment ET(int v);
 }
 
 main() {
